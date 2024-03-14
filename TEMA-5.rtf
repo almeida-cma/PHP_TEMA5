@@ -1,0 +1,466 @@
+{\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset0 Calibri-Bold;}{\f2\fnil\fcharset0 Arial-BoldMT;}}
+{\colortbl ;\red89\green52\blue148;\red0\green0\blue0;\red0\green77\blue187;\red0\green176\blue80;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sl240\slmult1\qj\f0\fs22\lang22 TEMA 5 - \b\f1\fs32 Conceito sobre Array\par
+\par
+\b0\f0\fs22 Vamos agora falar um pouco sobre Array, sendo uma rotina de tarefas muito usada em qualquer linguagem de programa\'e7\'e3o, dentro do PHP vamos ver a import\'e2ncia desse comando ou fun\'e7\'e3o.\par
+A finalidade de um Array \'e9 guardar v\'e1rios dados economizando linhas de c\'f3digos, porque ao declarar uma vari\'e1vel do tipo Array ela pode guardar muitos dados e organizar por \'edndice.\par
+\par
+
+\pard\cf1\b\f2 5.1 \f1\fs28 Introdu\'e7\'e3o sobre tipos e Array\par
+
+\pard\sl240\slmult1\qj\cf2\b0\f0\fs22 No PHP, os array podem ser criados por meio do construtor de linguagem array(), sendo composto por par\'eanteses e chaves, na sintaxe.\par
+Os arrays s\'e3o estruturas de dados que permitem armazenar e manipular v\'e1rios valores em uma \'fanica vari\'e1vel. Eles s\'e3o muito \'fateis para organizar e processar informa\'e7\'f5es de \cf0 forma din\'e2mica e eficiente. No PHP, existem \b tr\'eas tipos de arrays: indexados, associativos e multidimensionais.\par
+\b0 Os \b arrays indexados\b0  s\'e3o aqueles que usam \'edndices num\'e9ricos para acessar seus elementos. Eles s\'e3o criados usando a fun\'e7\'e3o array() ou a sintaxe de colchetes []. Por exemplo:\par
+\par
+\cf3 <!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Exemplo de Arrays Indexados</title>\par
+    <style>\par
+        /* Estilos CSS para a p\'e1gina */\par
+        body \{\par
+            font-family: Arial, sans-serif;\par
+            background-color: #f4f4f4;\par
+            margin: 0;\par
+            padding: 0;\par
+        \}\par
+        .container \{\par
+            max-width: 600px;\par
+            margin: 50px auto;\par
+            background-color: #fff;\par
+            padding: 20px;\par
+            border-radius: 8px;\par
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\par
+        \}\par
+        h2 \{\par
+            color: #333;\par
+        \}\par
+        ul \{\par
+            list-style-type: none;\par
+            padding: 0;\par
+        \}\par
+        li \{\par
+            margin-bottom: 10px;\par
+        \}\par
+    </style>\par
+</head>\par
+<body>\par
+    <div class="container">\par
+        <h2>Exemplo de Arrays Indexados em PHP</h2>\b\par
+        <?php\par
+        // Criando um array usando a fun\'e7\'e3o array()\par
+        $frutas = array("Ma\'e7\'e3", "Banana", "Laranja", "Pera");\par
+\par
+        // Criando um array usando a sintaxe de colchetes []\par
+        $cores = ["Vermelho", "Verde", "Azul", "Amarelo"];\par
+        ?>\par
+\b0\par
+        <h3>Lista de Frutas</h3>\par
+\tab\tab <h4>Criando um array usando a fun\'e7\'e3o array()</h4>\par
+        <ul>\b\par
+            <?php\par
+            // Iterando sobre o array de frutas e exibindo cada uma delas como itens de lista HTML\par
+            foreach ($frutas as $fruta) \{\par
+                echo "<li>$fruta</li>";\par
+            \}\par
+            ?>\par
+\b0         </ul>\par
+\par
+        <h3>Lista de Cores</h3>\par
+\tab\tab <h4>Criando um array usando a sintaxe de colchetes []</h4>\par
+        <ul>\b\par
+            <?php\par
+            // Iterando sobre o array de cores e exibindo cada uma delas como itens de lista HTML\par
+            foreach ($cores as $cor) \{\par
+                echo "<li>$cor</li>";\par
+            \}\par
+            ?>\par
+\b0         </ul>\par
+    </div>\par
+</body>\par
+</html>\par
+\par
+
+\pard\qj\cf0 Os arrays associativos s\'e3o aqueles que usam chaves alfanum\'e9ricas para acessar seus elementos. Eles s\'e3o criados usando a fun\'e7\'e3o array() ou a sintaxe de colchetes [], mas especificando as chaves e os valores de cada elemento. Por exemplo:\par
+\par
+\cf3 <!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Exemplo de Arrays Associativos</title>\par
+    <style>\par
+        /* Estilos CSS para a p\'e1gina */\par
+        body \{\par
+            font-family: Arial, sans-serif;\par
+            background-color: #f4f4f4;\par
+            margin: 0;\par
+            padding: 0;\par
+        \}\par
+        .container \{\par
+            max-width: 600px;\par
+            margin: 50px auto;\par
+            background-color: #fff;\par
+            padding: 20px;\par
+            border-radius: 8px;\par
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\par
+        \}\par
+        h2 \{\par
+            color: #333;\par
+        \}\par
+        ul \{\par
+            list-style-type: none;\par
+            padding: 0;\par
+        \}\par
+        li \{\par
+            margin-bottom: 10px;\par
+        \}\par
+    </style>\par
+</head>\par
+<body>\par
+    <div class="container">\par
+        <h2>Exemplo de Arrays Associativos em PHP</h2>\par
+\b         <?php\par
+        // Criando um array associativo especificando chaves e valores para cada elemento\par
+        $pessoa = array(\par
+            "nome" => "Jo\'e3o",\par
+            "idade" => 25,\par
+            "cidade" => "S\'e3o Paulo"\par
+        );\par
+        ?>\par
+\b0\par
+        <h3>Detalhes da Pessoa</h3>\par
+        <ul>\par
+\b             <?php\par
+            // Iterando sobre o array associativo e exibindo cada chave e valor\par
+            foreach ($pessoa as $chave => $valor) \{\par
+                echo "<li><strong>$chave:</strong> $valor</li>";\par
+            \}\par
+            ?>\par
+\b0         </ul>\par
+    </div>\par
+</body>\par
+</html>\par
+\par
+\cf0 Os arrays multidimensionais s\'e3o aqueles que cont\'eam outros arrays como elementos.\par
+Eles s\'e3o criados usando a fun\'e7\'e3o array() ou a sintaxe de colchetes [], mas aninhando outros arrays dentro deles. Por exemplo:\par
+\par
+\cf3 <!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Exemplo de Arrays Associativos - M\'faltiplas Pessoas</title>\par
+    <style>\par
+        /* Estilos CSS para a p\'e1gina */\par
+        body \{\par
+            font-family: Arial, sans-serif;\par
+            background-color: #f4f4f4;\par
+            margin: 0;\par
+            padding: 0;\par
+        \}\par
+        .container \{\par
+            max-width: 600px;\par
+            margin: 50px auto;\par
+            background-color: #fff;\par
+            padding: 20px;\par
+            border-radius: 8px;\par
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\par
+        \}\par
+        h2 \{\par
+            color: #333;\par
+        \}\par
+        ul \{\par
+            list-style-type: none;\par
+            padding: 0;\par
+        \}\par
+        li \{\par
+            margin-bottom: 10px;\par
+        \}\par
+    </style>\par
+</head>\par
+<body>\par
+    <div class="container">\par
+        <h2>Exemplo de Arrays Associativos em PHP - M\'faltiplas Pessoas</h2>\b\par
+        <?php\par
+        // Array multidimensional com informa\'e7\'f5es de m\'faltiplas pessoas\par
+        $pessoas = array(\par
+            array(\par
+                "nome" => "Jo\'e3o",\par
+                "idade" => 25,\par
+                "cidade" => "S\'e3o Paulo"\par
+            ),\par
+            array(\par
+                "nome" => "Maria",\par
+                "idade" => 30,\par
+                "cidade" => "Rio de Janeiro"\par
+            ),\par
+            array(\par
+                "nome" => "Pedro",\par
+                "idade" => 28,\par
+                "cidade" => "Belo Horizonte"\par
+            )\par
+        );\par
+        ?>\par
+\par
+        <?php foreach ($pessoas as $pessoa): ?>\par
+\b0             <h3>Detalhes da Pessoa</h3>\par
+            <ul>\b\par
+                <?php foreach ($pessoa as $chave => $valor): ?>\par
+\b0                     <li><strong>\b <?php echo $chave ?>\b0 :</strong> \b <?php echo $valor ?>\b0 </li>\par
+                \b <?php endforeach; ?>\b0\par
+            </ul>\par
+        \b <?php endforeach; ?>\b0\par
+    </div>\par
+</body>\par
+</html>\par
+\cf0\par
+
+\pard Para acessar os elementos de um array, basta usar o operador [] e informar o \'edndice ou a chave correspondente. Por exemplo:\par
+\par
+\cf3 <!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+    <meta charset="UTF-8">\par
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+    <title>Agenda de Contatos</title>\par
+    <style>\par
+        /* Estilos CSS para a p\'e1gina */\par
+        body \{\par
+            font-family: Arial, sans-serif;\par
+            background-color: #f4f4f4;\par
+            margin: 0;\par
+            padding: 0;\par
+        \}\par
+        .container \{\par
+            max-width: 600px;\par
+            margin: 50px auto;\par
+            background-color: #fff;\par
+            padding: 20px;\par
+            border-radius: 8px;\par
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\par
+        \}\par
+        h2 \{\par
+            color: #333;\par
+        \}\par
+        ul \{\par
+            list-style-type: none;\par
+            padding: 0;\par
+        \}\par
+        li \{\par
+            margin-bottom: 10px;\par
+        \}\par
+    </style>\par
+</head>\par
+<body>\par
+    <div class="container">\par
+        <h2>Agenda de Contatos</h2>\par
+\b         <?php\par
+        // Array multidimensional representando a agenda de contatos\par
+        $agenda = array(\par
+            array(\par
+                "nome" => "Jo\'e3o",\par
+                "telefone" => "(11) 1234-5678",\par
+                "cidade" => "S\'e3o Paulo"\par
+            ),\par
+            array(\par
+                "nome" => "Maria",\par
+                "telefone" => "(21) 9876-5432",\par
+                "cidade" => "Rio de Janeiro"\par
+            ),\par
+            array(\par
+                "nome" => "Pedro",\par
+                "telefone" => "(31) 4567-8901",\par
+                "cidade" => "Belo Horizonte"\par
+            )\par
+        );\par
+        ?>\par
+\b0\par
+        <h3>Contatos na Agenda:</h3>\par
+        <ul>\par
+\b             <?php foreach ($agenda as $contato): ?>\par
+\b0                 <li>\par
+                    <strong>Nome:</strong> \b <?php echo $contato["nome"]; ?>\b0 <br>\par
+                    <strong>Telefone:</strong> \b <?php echo $contato["telefone"]; ?>\b0 <br>\par
+                    <strong>Cidade:</strong> \b <?php echo $contato["cidade"]; ?>\b0 <br>\par
+                </li>\par
+\b             <?php endforeach; ?>\par
+\b0         </ul>\par
+\par
+        <h3>Exemplos de Acessos aos Elementos do Array:</h3>\par
+        <ul>\par
+            <li>Acessando o telefone de Maria: \b <?php echo $agenda[1]["telefone"]; ?>\b0 </li>\par
+            <li>Acessando a cidade de Pedro: \b <?php echo $agenda[2]["cidade"]; ?>\b0 </li>\par
+        </ul>\par
+    </div>\par
+</body>\par
+</html>\par
+\par
+\cf1\b\f2 5.2 \f1\fs28 Criando um Array e seus tipos\par
+\b0\f0\fs26 Array do tipo vetor:\par
+
+\pard\qj\cf2\fs22 Os dados guardados em um Array do tipo vetor s\'e3o organizados por colunas e chamados por \'edndice, todos os tipos de Array tem uma sequ\'eancia l\'f3gica iniciado por zero, \cf0 ent\'e3o para chamar um valor dentro de um Array, chamamos por esse n\'famero que \'e9 rotulado de \'edndice.\par
+Vari\'e1vel $cor est\'e1 recebendo tr\'eas valores veja como fica a aloca\'e7\'e3o desse tipo de vari\'e1vel.\par
+\par
+0\tab amarelo\par
+1\tab azul\par
+2\tab rosa\par
+\par
+
+\pard Cada valor alocado nessa vari\'e1vel, vai ser organizado em \'edndice que inicia com zero, para chamar cada um desses valores vamos chamar eles por n\'fameros que chamamos de \'edndice ou chave.\par
+\par
+\cf3\b <?php\par
+$cor = array("Amarelo", "Azul", "Rosa");\par
+\par
+// Exibir todos os dados\par
+print_r($cor);\par
+echo "<br>";\par
+// Exibir somente o \'edndice zero que \'e9 "Amarelo"\par
+echo $cor[0];\par
+?>\par
+\par
+\cf1\b0\fs26 Array do tipo matriz:\par
+\cf2\fs22 Os dados guardados em um Array do tipo matriz, s\'e3o guardados e organizados tamb\'e9m pelo \'edndice, s\'f3 que nesse caso guardamos em uma tabela fict\'edcia baseada em linhas e m\'faltiplas colunas. Veja o exemplo:\par
+\par
+\cf3\b <?php\par
+$cadastro = array(\par
+    array("Anselmo", "Renata", "Lucas"),\par
+    array("Ana", "Ticlane", "Roberta"),\par
+    array("Daniela", "Adriana", "Maria")\par
+);\par
+\par
+// Exibir Roberta (linha 0, coluna 1)\par
+echo $cadastro[0][1];\par
+\par
+echo "<br>";\par
+\par
+// Exibir Daniela (linha 2, coluna 0)\par
+echo $cadastro[2][0];\par
+?>\par
+\par
+\cf1\f2 5.3 \f1\fs28 Modificando e mesclando\par
+
+\pard\qj\cf2\b0\f0\fs22 Para modificar um array, \'e9 pela sua configura\'e7\'e3o expl\'edcita de valores neles. Para isso, \cf0 basta inserirmos valores no array, com a chave espec\'edfica para cada dado entre colchetes. Veja o exemplo:\par
+\par
+\cf3\b <?php\par
+// Criar um array\par
+$frutas = array("Ma\'e7\'e3", "Banana", "Laranja");\par
+\par
+// Exibir o array antes da modifica\'e7\'e3o\par
+echo "Array antes da modifica\'e7\'e3o: ";\par
+print_r($frutas);\par
+\par
+// Modificar um elemento do array\par
+$frutas[1] = "Abacaxi";\par
+echo "<br>";\par
+echo "Trocando Banana por Abacaxi";\par
+echo "<br>";\par
+\par
+// Exibir o array ap\'f3s a modifica\'e7\'e3o\par
+echo "Array ap\'f3s a modifica\'e7\'e3o: ";\par
+print_r($frutas);\par
+?>\par
+\par
+
+\pard\cf0\b0 Para mesclar valores dentro de um array temos que usar uma fun\'e7\'e3o espec\'edfica que \'e9 array_merge, mesclar \'e9 unir duas ou mais array em uma s\'f3, uma jun\'e7\'e3o de dados.\par
+\par
+\cf3\b <?php\par
+// Array de alunos\par
+$alunos = array("Jo\'e3o", "Pedro", "Lucas");\par
+echo "<strong>Alunos</strong>"."<br>";\par
+print_r($alunos);\par
+echo "<br>";\par
+\par
+// Array de alunas\par
+$alunas = array("Maria", "Ana", "Carla");\par
+echo "<strong>Alunas</strong>"."<br>";\par
+print_r($alunas);\par
+echo "<br>";\par
+\par
+// Mesclar os dois arrays\par
+$alunos_e_alunas = array_merge($alunos, $alunas);\par
+echo "<strong>Mesclagem</strong>"."<br>";\par
+// Exibir o array resultante\par
+print_r($alunos_e_alunas);\par
+?>\par
+\par
+
+\pard\qj\cf0 RESUMO:\par
+\b0\par
+Neste cap\'edtulo sobre Arrays, exploramos os conceitos fundamentais desse elemento crucial na programa\'e7\'e3o. Os Arrays s\'e3o estruturas de dados que permitem armazenar e manipular m\'faltiplos valores em uma \'fanica vari\'e1vel. No PHP, existem tr\'eas tipos principais de Arrays: indexados, associativos e multidimensionais. Os indexados usam \'edndices num\'e9ricos para acessar elementos, enquanto os associativos utilizam chaves alfanum\'e9ricas. Os multidimensionais cont\'eam outros Arrays como elementos.\par
+Demonstramos como criar e acessar elementos em Arrays, destacando a import\'e2ncia dos \'edndices e chaves. Al\'e9m disso, apresentamos exemplos de Arrays do tipo vetor e matriz, ilustrando como organizar dados em \'edndices e como modificar e mesclar Arrays quando necess\'e1rio. Entender esses conceitos \'e9 essencial para o desenvolvimento back-end em PHP, pois Arrays s\'e3o ferramentas poderosas para organizar e manipular informa\'e7\'f5es de forma eficiente.\par
+\par
+\b\f1 1. \b0\f0 Explique como os Arrays indexados s\'e3o estruturados em PHP, incluindo a import\'e2ncia dos \'edndices num\'e9ricos. D\'ea um exemplo simples.\par
+\b\f1 2. \b0\f0 Imagine que voc\'ea est\'e1 criando um Array que armazena nomes de cidades. Cite pelo menos tr\'eas cidades e seus \'edndices correspondentes no Array.\par
+\b\f1 3. \b0\f0 Em um site de receitas, como voc\'ea usaria um Array associativo para armazenar informa\'e7\'f5es sobre ingredientes e suas quantidades? D\'ea um exemplo simples.\par
+\b\f1 4. \b0\f0 Qual \'e9 a principal vantagem de usar Arrays em programa\'e7\'e3o web, especialmente no desenvolvimento back-end? Explique usando conceitos abordados no cap\'edtulo.\par
+\b\f1 5. \b0\f0 Descreva o papel das chaves (ou \'edndices) em Arrays associativos e explique por que elas s\'e3o \'fateis na organiza\'e7\'e3o e recupera\'e7\'e3o de dados em PHP.\par
+\b\f1 6. \b0\f0 Descreva o processo de modifica\'e7\'e3o de um Array em PHP, fornecendo um exemplo pr\'e1tico em que voc\'ea adiciona ou altera valores em um Array.\par
+\b\f1 7. \b0\f0 Qual \'e9 a diferen\'e7a entre vetor e matriz?\par
+\b\f1 8\b0\f0 . O que \'e9 \'edndice?\par
+\b\f1 9\b0\f0 .Qual \'e9 a fun\'e7\'e3o do la\'e7o de repeti\'e7\'e3o na programa\'e7\'e3o?\par
+\b\f1 10\b0\f0 . O vetor e a matriz iniciam sua organiza\'e7\'e3o com o n\'famero 1 ou 0?\par
+\cf3\par
+
+\pard\sl240\slmult1\qj\cf4\b 1. Arrays indexados em PHP:\par
+\b0    - Em PHP, os arrays indexados s\'e3o estruturados como cole\'e7\'f5es ordenadas de elementos, onde cada elemento \'e9 acessado atrav\'e9s de um \'edndice num\'e9rico.\par
+   - Os \'edndices num\'e9ricos em arrays indexados come\'e7am com 0 e aumentam sequencialmente.\par
+   - Um exemplo simples de um array indexado em PHP:\par
+     ```php\par
+     $frutas = array("Ma\'e7\'e3", "Banana", "Laranja");\par
+     ```\par
+     \par
+\b 2. Exemplo de Array de cidades com \'edndices correspondentes:\par
+\b0    - Cidades: S\'e3o Paulo, Rio de Janeiro, Belo Horizonte\par
+   - \'cdndices correspondentes no array: 0, 1, 2\par
+   ```php\par
+   $cidades = array("S\'e3o Paulo", "Rio de Janeiro", "Belo Horizonte");\par
+   ```\par
+   \par
+\b 3. Uso de um Array associativo para armazenar ingredientes e quantidades:\par
+\b0    - Um array associativo em PHP \'e9 \'fatil para armazenar informa\'e7\'f5es relacionadas, como ingredientes e suas quantidades em uma receita.\par
+   - Exemplo:\par
+     ```php\par
+     $ingredientes = array(\par
+         "farinha" => "200g",\par
+         "a\'e7\'facar" => "100g",\par
+         "ovos" => "2 unidades"\par
+     );\par
+     ```\par
+\par
+\b 4. Vantagens de usar Arrays em programa\'e7\'e3o web:\par
+\b0    - Os arrays permitem armazenar dados de forma estruturada e acess\'e1-los eficientemente por meio de \'edndices ou chaves.\par
+   - S\'e3o \'fateis para manipula\'e7\'e3o e organiza\'e7\'e3o de dados em aplicativos web, como armazenar informa\'e7\'f5es de formul\'e1rios, resultados de consultas a bancos de dados, entre outros.\par
+\par
+\b 5. Papel das chaves em Arrays associativos:\par
+\b0    - As chaves em arrays associativos s\'e3o usadas para associar um valor espec\'edfico a uma chave \'fanica.\par
+   - Elas s\'e3o \'fateis na organiza\'e7\'e3o e recupera\'e7\'e3o de dados, pois permitem acessar rapidamente um valor espec\'edfico usando uma chave conhecida.\par
+\par
+\b 6. Processo de modifica\'e7\'e3o de um Array em PHP:\par
+\b0    - Para modificar um array em PHP, voc\'ea pode usar \'edndices para acessar e alterar elementos existentes ou adicionar novos elementos.\par
+   - Exemplo de adi\'e7\'e3o de um novo elemento:\par
+     ```php\par
+     $frutas = array("Ma\'e7\'e3", "Banana", "Laranja");\par
+     $frutas[] = "Abacaxi"; // Adiciona "Abacaxi" ao final do array\par
+     ```\par
+\par
+\b 7. Diferen\'e7a entre vetor e matriz:\par
+\b0    - Um vetor \'e9 um array unidimensional que armazena uma lista de elementos.\par
+   - Uma matriz \'e9 um array multidimensional que armazena dados em linhas e colunas, formando uma grade ou tabela.\par
+\par
+\b 8. \'cdndice:\par
+\b0    - Um \'edndice \'e9 um valor usado para acessar um elemento espec\'edfico em um array.\par
+   - Em PHP, os \'edndices podem ser num\'e9ricos (em arrays indexados) ou alfanum\'e9ricos (em arrays associativos).\par
+\par
+\b 9. Fun\'e7\'e3o do la\'e7o de repeti\'e7\'e3o na programa\'e7\'e3o:\par
+\b0    - O la\'e7o de repeti\'e7\'e3o \'e9 uma estrutura de controle que permite executar um bloco de c\'f3digo v\'e1rias vezes.\par
+   - \'c9 usado para automatizar tarefas repetitivas e processar conjuntos de dados de forma eficiente.\par
+\par
+\b 10. In\'edcio da organiza\'e7\'e3o do vetor e da matriz:\par
+\b0     - Em PHP, assim como na maioria das linguagens de programa\'e7\'e3o, a organiza\'e7\'e3o de vetores e matrizes come\'e7a com o \'edndice 0 para a primeira posi\'e7\'e3o. No entanto, \'e9 importante notar que algumas linguagens de programa\'e7\'e3o, como o MATLAB, podem come\'e7ar a indexa\'e7\'e3o a partir de 1.\par
+\par
+}
+ 
